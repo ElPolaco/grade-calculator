@@ -32,10 +32,8 @@ function App() {
       <Window>
         <form action='#' onSubmit={(e)=>{e.preventDefault();calculateGrade();}} className='p-2 flex flex-col justify-center w-full h-full'>
         <h1 className='text-5xl'>Grade calculator</h1>
-        <label htmlFor='points'>Points</label>
-        <PointsInput id='points' reff={pointsInput} placeholder={"Points"} min={0} max={max} value={points} onInput={(e)=>setPoints(+e.target.value)}/>
-        <label htmlFor='max' className='float-left'>Maximum points</label>
-        <PointsInput id='max' reff={maxInput} placeholder={"Max"} min={1} value={max} onInput={(e)=>setMax(+e.target.value)}/>
+        <PointsInput id='points' reff={pointsInput} placeholder={"Points"} min={0} max={max} value={points} onChange={(e)=>setPoints(+e.target.value)}/>    
+        <PointsInput id='max' reff={maxInput} placeholder={"Max"} min={1} value={max} onChange={(e)=>setMax(+e.target.value)}/>
         <button className='text-gray-50 bg-green-700 text-4xl self-center w-1/2 p-2 hover:bg-green-500' style={{'transition':'1.5s'}}>Calculate the grade</button>
         </form>
       </Window>      
